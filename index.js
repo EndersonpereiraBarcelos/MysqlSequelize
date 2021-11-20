@@ -21,8 +21,4 @@
 
     await produtos.destroy();
 
-
-
-
-
 })();
