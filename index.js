@@ -1,24 +1,20 @@
 (async () => {
 
     const database = require('./db');
-    const Produto = require('./produto');
+    const Nomes = require('./funcionarios');
     await database.sync();
 
-    const novoProduto = await Produto.create({
-        nome:'teclado redragom',
-        preco: 300,
-        descricao: 'teclado Bacana'
+    const ListaFuncionarios = await Nomes.create({
+        nome:'enderson',
+        sobrenome:'barcelos',
+        setorTrabalho:'back-end',
+        numeroId:'4444'
 
     })
 
-    console.log(novoProduto);
+    console.log(ListaFuncionarios);
 
-    const produtos = await Produto.findALL();
-    console.log(produtos)
-
-    Produto.descricao = 'fiz uma alteracao';
-    await produtos.save();
-
-    await produtos.destroy();
+    const Lista = await Nomes.findALL();
+    console.log(Lista);
 
 })();
